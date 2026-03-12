@@ -1,14 +1,15 @@
 # openclaw workspace
 
-## Local Map app
+## Hillside 3037 3D map app
 
 A tiny static app for GitHub Pages lives in `docs/`.
 
 ### What it does
-- shows a map with OpenStreetMap tiles
+- shows a 3D-capable map centered on Hillside 3037
 - asks for location permission in the browser
 - drops a marker on your current position
 - optional follow mode for live movement
+- loads nearby OpenStreetMap building footprints and renders them as 3D house blocks
 
 ### Publish with GitHub Pages
 In GitHub:
@@ -24,4 +25,9 @@ Your app should then appear at:
 - open the GitHub Pages URL in Safari
 - tap **Find my location**
 - allow location access
+- use two fingers to tilt and rotate the 3D map
 - optional: use **Add to Home Screen** for app-like launching
+
+### Notes
+- 3D building shapes come from OpenStreetMap data fetched live from Overpass
+- some house heights are estimated when exact height data is missing

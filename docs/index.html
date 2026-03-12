@@ -3,46 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Local Map</title>
+    <title>Hillside 3037 3D Map</title>
     <meta
       name="description"
-      content="A simple GitHub Pages app that shows your current location on a map."
+      content="A simple GitHub Pages app that shows your current location and 3D buildings around Hillside 3037."
     />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-      crossorigin=""
-    />
+    <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <main class="app-shell">
       <section class="panel">
-        <h1>Local Map</h1>
-        <p class="lede">Open this on your iPhone, allow location access, and it’ll drop you onto the map.</p>
+        <h1>Hillside 3037 3D Map</h1>
+        <p class="lede">
+          Open this on your iPhone, allow location access, and explore 3D house blocks around Hillside 3037.
+        </p>
 
         <div class="actions">
           <button id="locateBtn">Find my location</button>
           <button id="followBtn" class="secondary">Follow me: off</button>
+          <button id="hillsideBtn" class="secondary alt">Go to Hillside</button>
         </div>
 
         <div class="status-wrap">
-          <p id="status" class="status">Ready.</p>
+          <p id="status" class="status">Loading map…</p>
           <p id="coords" class="coords">Coordinates will appear here.</p>
+        </div>
+
+        <div class="notes">
+          <p><strong>3D buildings:</strong> built from OpenStreetMap building footprints near Hillside 3037.</p>
+          <p><strong>Tip:</strong> use two fingers to tilt/rotate the map on iPhone.</p>
         </div>
       </section>
 
       <section class="map-wrap">
-        <div id="map" aria-label="Map showing your current location"></div>
+        <div id="map" aria-label="3D map showing Hillside 3037 and your current location"></div>
       </section>
     </main>
 
-    <script
-      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-      crossorigin=""
-    ></script>
+    <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+    <script src="https://unpkg.com/osmtogeojson@3.0.0-beta.5/osmtogeojson.js"></script>
     <script src="./app.js"></script>
   </body>
 </html>

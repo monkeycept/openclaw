@@ -6,6 +6,7 @@
   --text: #e2e8f0;
   --accent: #38bdf8;
   --accent-2: #22c55e;
+  --accent-3: #f59e0b;
   --border: rgba(148, 163, 184, 0.18);
   --shadow: 0 20px 40px rgba(2, 6, 23, 0.35);
 }
@@ -24,7 +25,7 @@ body {
 
 .app-shell {
   display: grid;
-  grid-template-columns: minmax(280px, 360px) 1fr;
+  grid-template-columns: minmax(300px, 380px) 1fr;
   min-height: 100vh;
 }
 
@@ -44,12 +45,14 @@ h1 {
 
 .lede,
 .status,
-.coords {
+.coords,
+.notes p {
   line-height: 1.5;
 }
 
 .lede,
-.coords {
+.coords,
+.notes p {
   color: var(--muted);
 }
 
@@ -76,6 +79,11 @@ button.secondary {
   background: var(--accent-2);
 }
 
+button.alt {
+  color: #451a03;
+  background: var(--accent-3);
+}
+
 button:hover {
   filter: brightness(1.05);
 }
@@ -84,9 +92,16 @@ button:active {
   transform: translateY(1px);
 }
 
-.status-wrap {
+.status-wrap,
+.notes {
   display: grid;
   gap: 0.4rem;
+}
+
+.notes {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
 }
 
 .map-wrap {
@@ -96,6 +111,12 @@ button:active {
 #map {
   width: 100%;
   height: 100vh;
+}
+
+.maplibregl-popup-content {
+  background: #0f172a;
+  color: #e2e8f0;
+  border: 1px solid var(--border);
 }
 
 @media (max-width: 820px) {
