@@ -6,7 +6,7 @@
     <title>Hillside 3037 3D Map</title>
     <meta
       name="description"
-      content="A simple GitHub Pages app that shows your current location and 3D buildings around Hillside 3037."
+      content="A simple GitHub Pages app that shows your current location, 3D buildings around Hillside 3037, and lets you place GLB models by address."
     />
     <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css" />
     <link rel="stylesheet" href="./style.css" />
@@ -30,6 +30,39 @@
           <p id="coords" class="coords">Coordinates will appear here.</p>
         </div>
 
+        <form id="modelForm" class="model-form">
+          <h2>Place a GLB at an address</h2>
+          <label>
+            <span>Address</span>
+            <input id="addressInput" type="text" value="46 Sugargum Dr, Hillside VIC 3037" placeholder="46 Sugargum Dr, Hillside VIC 3037" />
+          </label>
+          <label>
+            <span>GLB URL</span>
+            <input id="modelUrlInput" type="url" placeholder="https://example.com/house.glb" />
+          </label>
+          <label>
+            <span>or choose local .glb</span>
+            <input id="modelFileInput" type="file" accept=".glb,model/gltf-binary" />
+          </label>
+          <div class="inline-fields">
+            <label>
+              <span>Scale</span>
+              <input id="scaleInput" type="number" min="0.1" step="0.1" value="1" />
+            </label>
+            <label>
+              <span>Rotation °</span>
+              <input id="rotationInput" type="number" step="1" value="0" />
+            </label>
+            <label>
+              <span>Height m</span>
+              <input id="heightInput" type="number" step="0.1" value="0" />
+            </label>
+          </div>
+          <button type="submit">Place model</button>
+          <p class="hint">Tip: if the GLB comes from another site, it must allow cross-origin loading.</p>
+          <div id="placedModels" class="placed-models"></div>
+        </form>
+
         <div class="notes">
           <p><strong>3D buildings:</strong> built from OpenStreetMap building footprints near Hillside 3037.</p>
           <p><strong>Tip:</strong> use two fingers to tilt/rotate the map on iPhone.</p>
@@ -43,6 +76,6 @@
 
     <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
     <script src="https://unpkg.com/osmtogeojson@3.0.0-beta.5/osmtogeojson.js"></script>
-    <script src="./app.js"></script>
+    <script type="module" src="./app.js"></script>
   </body>
 </html>
