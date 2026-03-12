@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Local Map</title>
+    <meta
+      name="description"
+      content="A simple GitHub Pages app that shows your current location on a map."
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="panel">
+        <h1>Local Map</h1>
+        <p class="lede">Open this on your iPhone, allow location access, and it’ll drop you onto the map.</p>
+
+        <div class="actions">
+          <button id="locateBtn">Find my location</button>
+          <button id="followBtn" class="secondary">Follow me: off</button>
+        </div>
+
+        <div class="status-wrap">
+          <p id="status" class="status">Ready.</p>
+          <p id="coords" class="coords">Coordinates will appear here.</p>
+        </div>
+      </section>
+
+      <section class="map-wrap">
+        <div id="map" aria-label="Map showing your current location"></div>
+      </section>
+    </main>
+
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <script src="./app.js"></script>
+  </body>
+</html>
